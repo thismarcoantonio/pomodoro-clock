@@ -1,2 +1,3 @@
 # pomodoro-clock
-Pomodoro Clock - HTML5, CSS3 and Javascript
+
+Hi, I've developed this Pomodoro Clock using vanilla Javascript. If you wan't to see it live, just check it [here](https://thismarcoantonio.com/pomodoro-clock/ "My Personal Website").
