@@ -1,16 +1,25 @@
 {
-  "name": "pomodoro",
+  "name": "pomodoro-clock",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "source/index.html",
   "scripts": {
     "start": "gulp"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.18.8",
+    "autoprefixer": "^8.2.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
-    "gulp-stylus": "^2.6.0"
+    "gulp-babel": "^7.0.1",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-stylus": "^2.7.0",
+    "gulp-uglify": "^3.0.0",
+    "rimraf": "^2.6.2"
   }
 }
