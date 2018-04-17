@@ -1,56 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link href="style.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700" rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-</head>
-<body>
-	<!-- HAHAHA -->
-	<header class="header">
-		<div>
-			<h1 id="timer" class="timing">25:00</h1>
-			<h2 id="time-desc" class="timing-desc">session</h2>
-		</div>
-		<a class="fa fa-play-circle headBtn" id="playButton"><div class="fill"></div></a>
-		<a class="fa fa-pause-circle headBtn hidden" id="pauseButton"><div class="fill"></div></a>
-		<a class="fa fa-stop" id="stopButton"></a>
-	</header>
-	<main class="container">
-		<div class="hidePanel">
-		</div>
-		<section>
-			<h1>SESSION</h1>
-			<div class="controls" id="sButton">
-				<div>
-					<span id="sessionSpan">25</span>
-					Minutes
-				</div>
-				<div class="buttons">
-					<a class="fa fa-minus" id="minus"></a>
-					<a class="fa fa-plus" id="plus"></a>
-				</div>
-			</div>
+	<head>
+		<link href="styles.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	</head>
+	<body>
+		<section class="login" id="loginPage">
+			<form class="login__form" id="form">
+				<h1 class="login__title">POMODORO | <span class="login__title--light">CLOCK</span></h1>
+
+				<label for="login" class="login__avatar" id="loginAvatar"></label>
+				<input type="file" class="login__avatar--hidden" id="login" />
+				<label for="username" class="login__username-label">USERNAME</label>
+				<input type="text" class="login__username" id="username" />
+
+				<button class="login__enter-btn" type="submit">ENTER</button>
+			</form>
 		</section>
-		<section class="last">
-			<h1>BREAK</h1>
-			<div class="controls" id="bButton">
-				<div>
-					<span id="breakSpan">05</span>
-					Minutes
-				</div>
-				<div class="buttons">
-					<a class="fa fa-minus" id="minus"></a>
-					<a class="fa fa-plus" id="plus"></a>
-				</div>
-			</div>
-		</section>
-		<footer class="history">
-			<h1>Last Pomodoro</h1>
-			<div>Your time history will appear right here!</div>
-		</footer>
-	</main>
-	<script src="script.js"></script>
-</body>
+
+
+		<script src="./script.js"></script>
+	</body>
 </html>

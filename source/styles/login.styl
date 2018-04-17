@@ -1,0 +1,71 @@
+.login
+  width 100vw
+  height 100vh
+  background $darkGreen
+  display flex
+  align-items center
+  justify-content center
+
+.login--hidden
+  display none
+
+.login__title
+  color $liteGreen
+  align-self flex-start
+  padding 15px
+
+.login__title--light
+  font-weight 300
+
+.login__form
+  width 30%
+  height 60%
+  background #201e29 // url('./assets/login.jpeg') center no-repeat
+  // background-size cover
+  // background-blend-mode overlay
+  display flex
+  flex-direction column
+  align-items center
+  position relative
+
+.login__avatar
+  background-size cover
+  cursor pointer
+  height 120px
+  width 120px
+  border-radius 50%
+  background white
+  margin 50px 0
+  transition opacity 300ms
+
+.login__avatar:hover
+  opacity .8
+  
+.login__avatar--hidden
+  display none
+
+.login__username
+  color white
+  background none
+  border none
+  font-weight 600
+  font-size 22px
+  width 90%
+  outline none
+  border-top 2px solid white
+  padding 15px 0
+
+.login__username-label
+  color grey
+  align-self flex-start
+  margin-left 5%
+  margin-bottom 10px
+
+.login__enter-btn
+  cursor pointer
+  background white
+  padding 10px 25px
+  border 0
+  font-weight 600
+  position absolute
+  bottom -15px
