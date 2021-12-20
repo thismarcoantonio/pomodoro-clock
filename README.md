@@ -1,45 +1,33 @@
 # Pomodoro Clock
-Pomodoro Clock, made up with javascript and love 💖
+Pomodoro Clock, made up with javascript
 
 ## Getting Started
-To get this project up and running in your local machine, you'll need to clone the repo
+Clone the repository
 
 ```
 git clone https://github.com/thismarcoantonio/pomodoro-clock.git
 ```
 
-or just download it!
-
 ## Prerequisites
-You'll need some basic stuff to run this project in development:
 
 + [Node](https://nodejs.org/en/)
-+ Npm (comes with node)
++ NPM or Yarn
 
 ## Installing
-When you got node installed in your local machine, navigate to the folder that you've cloned
+Navigate to the repository folder
 
 ```
 cd ./pomodoro-clock
 ```
 
-and then install the dependencies with:
+Install the dependencies:
 
-```
-npm i
-```
+`npm install` or `yarn`
 
 To run the application, just run the `start` script with:
 
-```
-npm start
-```
+`npm start` or `yarn start`
 
 ## Built With
-* [Gulp](https://gulpjs.com/) - Gulp task runner
-* [BrowserSync](https://browsersync.io/) - The local Server, To get the project up and running
-
-## Contributing
-If you want to contribute, just submit a **Pull Request**, I'll read it ASAP!!!
-
-## Attributions
+* [Gulp](https://gulpjs.com/) - Task runner
+* [BrowserSync](https://browsersync.io/) - Local server, with auto reload

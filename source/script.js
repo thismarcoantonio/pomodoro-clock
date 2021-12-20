@@ -25,5 +25,4 @@
 
     document.getElementById('loginPage').classList.add('login--hidden');
   });
-
 })();
