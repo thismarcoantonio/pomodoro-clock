@@ -1,0 +1,155 @@
+.page {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.page__container {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 20%;
+}
+
+.page__background {
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  &::after {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    background: $gradient_green;
+  }
+}
+
+.page__background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page__title {
+  font-size: 24px;
+  text-align: center;
+  color: $color_white;
+}
+
+.page__timer-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.page__timer-countdown {
+  font-size: 48px;
+  position: absolute;
+  color: $color_white;
+  letter-spacing: 0.10em;
+  font-weight: $weight_medium;
+}
+
+.page__timer {
+  width: 208px;
+  height: 208px;
+  display: block;
+  margin: 32px auto;
+}
+
+.page__timer-backdrop {
+  stroke-width: 4px;
+  fill: transparent;
+  stroke: $color_green_primary;
+}
+
+.page__timer-progress {
+  fill: transparent;
+  stroke-width: 4px;
+  stroke: $color_white;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 377ms ease-in-out;
+}
+
+.page__sessions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page__session {
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+  margin: 0 8px;
+  border-radius: 50%;
+  transition: 377ms ease-in-out;
+  background-color: $color_white;
+  transition-property: opacity background;
+
+  &.active {
+    opacity: 1;
+  }
+
+  &.completed {
+    opacity: 1;
+    background-color: $color_green_active;
+  }
+
+  &.page__session--small {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.page__actions-mode {
+  font-size: 18px;
+  margin-top: 64px;
+  text-align: center;
+  color: $color_white;
+  font-weight: $weight_regular;
+}
+
+.page__actions-button {
+  border: 0;
+  width: 64px;
+  height: 64px;
+  display: block;
+  cursor: pointer;
+  margin: 16px auto;
+  border-radius: 50%;
+  background-color: $color_white;
+  box-shadow: 2px 2px 6px rgba($color_black, 0.06);
+}
+
+.page__actions-button-icon {
+  width: 40px;
+  color: $color_green_primary;
+}
+
+.page__actions-stop {
+  border: 0;
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: $color_green_primary;
+  box-shadow: 2px 2px 6px rgba($color_black, 0.06);
+}
+
+.page__actions-stop-icon {
+  width: 20px;
+  color: $color_white;
+}
