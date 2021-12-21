@@ -11,7 +11,7 @@ git clone https://github.com/thismarcoantonio/pomodoro-clock.git
 ## Prerequisites
 
 + [Node](https://nodejs.org/en/)
-+ NPM or Yarn
++ NPM
 
 ## Installing
 Navigate to the repository folder
@@ -22,11 +22,11 @@ cd ./pomodoro-clock
 
 Install the dependencies:
 
-`npm install` or `yarn`
+`npm install`
 
 To run the application, just run the `start` script with:
 
-`npm start` or `yarn start`
+`npm start`
 
 ## Built With
 * [Gulp](https://gulpjs.com/) - Task runner
