@@ -1,6 +1,8 @@
 # Pomodoro Clock
 Pomodoro Clock, made up with javascript
 
+<img src="https://github.com/thismarcoantonio/pomodoro-clock/blob/master/source/assets/demo.gif?raw=true" width="350" />
+
 ## Getting Started
 Clone the repository
 
