@@ -1,5 +1,5 @@
 let BREAK_TIME = 5 * 1000 * 60;
-let WORKING_TIME = 30 * 1000 * 60;
+let WORKING_TIME = 0.1 * 1000 * 60;
 let boostrap;
 
 (function () {
@@ -110,7 +110,7 @@ let boostrap;
     isModeWork = true;
 
     pauseTimer();
-    renderTime(WORKING_TIME);
+    renderTime(currentTime);
     renderIcon("play");
     renderMode();
     renderSessions();
