@@ -5,7 +5,8 @@
   "main": "source/index.html",
   "scripts": {
     "prestart": "rimraf ./build",
-    "start": "gulp"
+    "start": "gulp",
+    "test": "testcafe chrome tests/"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-stylus": "^2.7.0",
     "gulp-uglify": "^3.0.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "testcafe": "^0.20.3"
   }
 }
