@@ -31,3 +31,4 @@ To run the application, just run the `start` script with:
 ## Built With
 * [Gulp](https://gulpjs.com/) - Task runner
 * [BrowserSync](https://browsersync.io/) - Local server, with auto reload
+* [TestCafe](https://testcafe.io/) - E2E testing tool
