@@ -19,7 +19,7 @@
   height: 100%;
   position: absolute;
 
-  &::after {
+  &::after, &::before {
     top: 0;
     left: 0;
     z-index: 1;
@@ -29,6 +29,24 @@
     display: block;
     position: absolute;
     background: $gradient_green;
+    transition: opacity 377ms ease-in-out;
+  }
+
+  &::after {
+    background: $gradient_green;
+  }
+
+  &::before {
+    opacity: 0;
+    background: $gradient_white;
+  }
+
+  .page--secondary &::after {
+    opacity: 0;
+  }
+
+  .page--secondary &::before {
+    opacity: 1;
   }
 }
 
@@ -42,6 +60,11 @@
   font-size: 24px;
   text-align: center;
   color: $color_white;
+  transition: color 377ms ease-in-out;
+
+  .page--secondary & {
+    color: $color_green_primary;
+  }
 }
 
 .page__timer-container {
@@ -57,6 +80,11 @@
   color: $color_white;
   letter-spacing: 0.10em;
   font-weight: $weight_medium;
+  transition: color 377ms ease-in-out;
+
+  .page--secondary & {
+    color: $color_green_primary;
+  }
 }
 
 .page__timer {
@@ -70,6 +98,11 @@
   stroke-width: 4px;
   fill: transparent;
   stroke: $color_green_primary;
+  transition: stroke 377ms ease-in-out;
+
+  .page--secondary & {
+    stroke: $color_white;
+  }
 }
 
 .page__timer-progress {
@@ -78,7 +111,37 @@
   stroke: $color_white;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
-  transition: stroke-dashoffset 377ms ease-in-out;
+  transition: 377ms ease-in-out;
+  transition-property: stroke-dashoffset stroke;
+
+  .page--secondary & {
+    stroke: $color_green_secondary;
+  }
+}
+
+.page__timer-pointer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  transform: rotate(360deg);
+  transition: transform 377ms ease-in-out;
+
+  &::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-top: 26px;
+    border-radius: 50%;
+    background-color: $color_white;
+    transition: background 377ms ease-in-out;
+  }
+
+  .page--secondary &::after {
+    background-color: $color_green_secondary;
+  }
 }
 
 .page__sessions {
@@ -97,11 +160,11 @@
   background-color: $color_white;
   transition-property: opacity background;
 
-  &.active {
+  &.active, .page--secondary &.active {
     opacity: 1;
   }
 
-  &.completed {
+  &.completed, .page--secondary &.completed {
     opacity: 1;
     background-color: $color_green_active;
   }
@@ -109,6 +172,11 @@
   &.page__session--small {
     width: 10px;
     height: 10px;
+  }
+
+  .page--secondary & {
+    opacity: 0.4;
+    background-color: $color_green_secondary;
   }
 }
 
@@ -118,6 +186,11 @@
   text-align: center;
   color: $color_white;
   font-weight: $weight_regular;
+  transition: color 377ms ease-in-out;
+
+  .page--secondary & {
+    color: $color_green_primary;
+  }
 }
 
 .page__actions-button {
@@ -129,12 +202,22 @@
   margin: 16px auto;
   border-radius: 50%;
   background-color: $color_white;
+  transition: background 377ms ease-in-out;
   box-shadow: 2px 2px 6px rgba($color_black, 0.06);
+
+  .page--secondary & {
+    background-color: $color_green_primary;
+  }
 }
 
 .page__actions-button-icon {
   width: 40px;
   color: $color_green_primary;
+  transition: color 377ms ease-in-out;
+
+  .page--secondary & {
+    color: $color_white;
+  }
 }
 
 .page__actions-stop {
@@ -146,10 +229,20 @@
   cursor: pointer;
   border-radius: 50%;
   background-color: $color_green_primary;
+  transition: background 377ms ease-in-out;
   box-shadow: 2px 2px 6px rgba($color_black, 0.06);
+
+  .page--secondary & {
+    background-color: $color_white;
+  }
 }
 
 .page__actions-stop-icon {
   width: 20px;
   color: $color_white;
+  transition: color 377ms ease-in-out;
+
+  .page--secondary & {
+    color: $color_green_primary;
+  }
 }

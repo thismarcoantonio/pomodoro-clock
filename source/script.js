@@ -1,7 +1,8 @@
-(function () {
-  const BREAK_TIME = 0.1 * 1000 * 60;
-  const WORKING_TIME = 0.2 * 1000 * 60;
+let BREAK_TIME = 5 * 1000 * 60;
+let WORKING_TIME = 30 * 1000 * 60;
+let boostrap;
 
+(function () {
   let session = 0;
   let currentTime = 0;
   let isActive = false;
@@ -31,6 +32,11 @@
   function renderMode() {
     const mode = document.getElementById("mode");
     mode.innerHTML = isModeWork ? "work" : "break";
+
+    const page = document.getElementById("page");
+    return isModeWork
+      ? page.classList.remove("page--secondary")
+      : page.classList.add("page--secondary");
   }
 
   function renderIcon(icon) {
@@ -46,11 +52,14 @@
   function renderSessions() {
     const sessions = document.querySelectorAll("#session");
     sessions.forEach((element, index) => {
-      if (index === session) {
-        element.classList.add("active");
-      }
+      element.classList.remove("active", "completed");
+
       if (session > index) {
         element.classList.add("completed");
+      }
+
+      if (index === session) {
+        element.classList.add("active");
       }
     });
   }
@@ -66,6 +75,10 @@
     const offset = circumference - (percent / 100) * circumference;
     circle.style.strokeDasharray = `${circumference} ${circumference}`;
     circle.style.strokeDashoffset = offset;
+
+    const pointer = document.getElementById("pointer");
+    const rotateDegrees = (percent * 360) / 100;
+    pointer.style.transform = `rotate(${rotateDegrees}deg)`;
   }
 
   function startTimer() {
@@ -87,39 +100,37 @@
   }
 
   function pauseTimer() {
-    clearInterval(interval);
+    if (interval) clearInterval(interval);
   }
 
-  function start() {
+  boostrap = function () {
+    session = 0;
+    currentTime = WORKING_TIME;
+    isActive = false;
+    isModeWork = true;
+
+    pauseTimer();
     renderTime(WORKING_TIME);
     renderIcon("play");
     renderMode();
     renderSessions();
-    currentTime = WORKING_TIME;
+    renderProgress();
+  };
 
-    const actionButton = document.getElementById("actionButton");
-    actionButton.addEventListener("click", () => {
-      if (!isActive) {
-        isActive = true;
-        startTimer();
-        return renderIcon("pause");
-      }
-      isActive = false;
-      pauseTimer();
-      return renderIcon("play");
-    });
+  const actionButton = document.getElementById("actionButton");
+  actionButton.addEventListener("click", () => {
+    if (!isActive) {
+      isActive = true;
+      startTimer();
+      return renderIcon("pause");
+    }
+    isActive = false;
+    pauseTimer();
+    return renderIcon("play");
+  });
 
-    const stopButton = document.getElementById("stopButton");
-    stopButton.addEventListener("click", () => {
-      pauseTimer();
-      renderTime(WORKING_TIME);
-      renderIcon("play");
-      currentTime = WORKING_TIME;
-      session = 0;
-      isModeWork = true;
-      renderSessions();
-    });
-  }
+  const stopButton = document.getElementById("stopButton");
+  stopButton.addEventListener("click", boostrap);
 
-  start();
+  boostrap();
 })();
